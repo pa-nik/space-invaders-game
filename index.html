@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>10.1 space invaders (version 2)</title>
+
+    <!-- Recommended meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- PyScript CSS -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.2.1/core.css">
+
+    <!-- This script tag bootstraps PyScript -->
+    <script type="module" src="https://pyscript.net/releases/2025.2.1/core.js"></script>
+
+    <!-- p5js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    
+    <!-- p5.sound library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+    
+    <script>function setup() {}</script>
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+  <body>
+    <py-config type="json">
+      {
+        "fetch": [{
+          "files": [
+                "main.py", 
+                "sprite.py",
+                "spaceship.py",
+                "bullet.py",
+                "invader.py"
+            ]
+        }]
+      }
+    </py-config>
+    <script type="py" terminal></script>
+    <script type="py">
+      from main import *
+
+      p5.setup = setup
+      p5.draw = draw
+      p5.setup()
+
+      # p5 mouse and key events:
+      if "mousePressed" in globals():
+        p5.mousePressed = mousePressed
+      if "mouseReleased" in globals():
+        p5.mouseReleased = mouseReleased
+      if "keyPressed" in globals():
+        p5.keyPressed = keyPressed
+      if "keyReleased" in globals():
+        p5.keyReleased = keyReleased
+    </script>
+  </body>
+</html>
